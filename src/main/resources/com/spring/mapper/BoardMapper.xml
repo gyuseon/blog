@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.BoardMapper">
+
+	<!-- 카테고리 호출 -->
+	<select id="category" resultType="com.spring.domain.CategoryVO">
+		 select
+		  level, cateName, cateCode, cateCodeRef
+		 from board_category
+		     start with cateCodeRef is null connect by prior cateCode = cateCodeRef
+	</select>
+
+	<!-- 레시피 등록 -->
+	<insert id="board">
+		 insert into write_board (bnum, writer, bname, catecode, bdes, bimg, thumbimg, cooktime, serving, temperature, difficult, title)
+	     values (write_board_seq.nextval, #{writer}, #{bname}, #{catecode}, #{bdes}, #{bimg}, #{thumbimg}, #{cooktime}, #{serving}, #{temperature}, #{difficult}, #{title})
+	</insert>		
+	
+	<!-- 레시피 리스트 -->
+	<select id="list" resultType="com.spring.domain.BoardVO">
+		select bnum, bname, writer, catecode,bdate, bdes, bimg, thumbimg,title from write_board order by bnum desc
+	</select>
+	
+	
+	 <!-- 레시피 조회 -->
+	<!--<select id="view" resultType="com.spring.domain.BoardVO">
+ 		select bnum, bname, catecode, bdes, bimg, bdate, cooktime, serving, temperature, difficult from write_board where bnum = #{bnum}
+	</select> -->
+
+
+	<!-- 상품 조회 + 카테고리 조인-->
+	<select id="view" resultType="com.spring.domain.BoardViewVO">
+	 select g.bnum, g.bname, g.catecode, c.cateCodeRef, c.cateName, g.thumbimg, g.bimg, bdes, bdate, cooktime, serving, temperature, difficult ,title, writer
+	 from write_board g
+	 inner join board_category c
+	 on g.cateCode = c.cateCode 
+	 where g.bnum = #{bnum}
+	</select>
+
+	<!-- 상품 수정 -->
+	<update id="modify">
+	 update write_board set 
+	 bname = #{bname},
+	 writer = #{writer}, 
+	 catecode = #{catecode}, 
+	 bdes = #{bdes},
+	 bimg = #{bimg},
+	 thumbimg = #{thumbimg}, 
+	 cooktime = #{cooktime},
+	 serving = #{serving},
+	 temperature = #{temperature},
+	 difficult = #{difficult},
+	 title = #{title}
+	 where bnum = ${bnum}
+	</update>
+	
+	<!-- 상품 삭제 -->
+	<delete id="delete">
+	 delete write_board where bnum = #{bnum}
+	</delete>
+	
+	<!-- 전체 게시물 가져오기 -->
+ 		<select id="selectAll" resultType="com.spring.domain.BoardVO">
+		<!-- select * from spring_board where bno > 0 order by bno desc
+		<![CATA[]]> == 크다 작다 꺽세 사용할때 요류가 나오는데 그걸 없애줌 -->
+		<![CDATA[ 
+		select * 
+		from (select /*+INDEX_DESC(write_board pk_write_board) */ 
+		rownum rn,bnum,bname,bimg,thumbimg,bdate,title,writer
+		from write_board 
+		where bnum>0 and rownum <= (#{pageNum} * #{amount})) 
+		where rn> ((#{pageNum}-1)*#{amount})
+		]]>   
+		</select>  
+		
+		<select id="total" resultType="int" >
+		select count(*) from write_board where bnum >0
+		</select>
+		
+		<!-- <include refid="criteria"></include>
+		<![CDATA[   
+		      bno>0 and rownum <= (#{pageNum}*#{amount}))
+		where rn> (#{pageNum}-1)*#{amount}
+		]]>
+	</select>
+	<select id="total" resultType="int" >
+		select count(*) from spring_board where
+		<include refid ="criteria"></include>
+		 bno>0
+	</select> -->
+	
+	
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.FoodblogMapper">
+
+	<!-- 로그인 처리 -->
+	<select id="login" resultType="com.spring.domain.AuthVO">
+		select userid,username from foodblog where userid=#{userid} and password=#{password}
+	</select>
+
+
+	<!-- 비밀번호 수정 -->
+	<update id="updatePwd">
+		update foodblog set password=#{new_password} where userid=#{userid}
+	</update>
+
+	<!-- userid와 일치하는 비밀번호 추출 -->
+	<select id="getPassword" resultType="java.lang.String">
+		select password from foodblog where userid=#{userid}
+	</select>
+
+	<!-- 회원가입 -->
+	<insert id="register">
+		insert into foodblog(userid,password,username,email)
+		values(#{userid},#{password},#{username},#{email})
+	</insert>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="delete">
+		delete from foodblog where userid=#{userid}
+	</delete>
+	
+	<!-- 중복아이디 검사 -->
+	<select id="dupId" resultType="int">
+		select count(*) from foodblog where userid=#{userid}
+	</select>
+
+</mapper>

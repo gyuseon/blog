@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,22 +113,22 @@
                                         <ul class="dropdown">
                                             <li><a href="/foodblog/index">Home</a></li>
                                             <li><a href="catagory.html">Catagory</a></li>
-                                            <li><a href="catagory-post.html">Catagory Post</a></li>
-                                            <li><a href="single-post.html">Single Post</a></li>
-                                            <li><a href="receipe.html">Recipe</a></li>
+                                            <li><a href="/foodblog/boardList">boardList</a></li>
+                                            <li><a href="/foodblog/view">view</a></li>
+                                            <li><a href="/foodblog/recipe">Recipe</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Recipes</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- 인스턴트</a></li>
+                                                <li><a href="/foodblog/category?c=101&l=2">- 햄버거</a></li>
+                                                <li><a href="/foodblog/category?c=102&l=2">- 피자</a></li>
+                                                <li><a href="/foodblog/category?c=103&l=2">- 소세지</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Fastfood</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Salad</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Soup</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="#">- Recipe</a></li>
@@ -164,8 +165,24 @@
 
                                 <!-- Login/Register -->
                                 <div class="login-area">
-                                     <a href="/foodblog/login">Login /</a>
-                                     <a href="/foodblog/register"> Register</a>
+                                <ul>
+                                     <c:if test="${auth==null}">  
+										  <a  href="/foodblog/login" >Login /</a>
+										  <a  href="/foodblog/register" >Register</a>
+									 </c:if>
+									
+                                    
+									 <c:if test="${auth!=null}">
+									   <a  href="/foodblog/board2" >Write /</a>
+										  <a  href="/foodblog/logout" >Logout /</a>
+										    <li><a href="#">Modify</a>
+                                        		<ul class="dropdown">
+										 			 <a  href="/foodblog/changePwd" >Password </a>
+										 			 <a  href="/foodblog/leave">Leave</a>
+                                        		</ul>
+                                   			</li>
+									 </c:if>
+                                </ul>
                                 </div>
                             </div>
                             <!-- Nav End -->

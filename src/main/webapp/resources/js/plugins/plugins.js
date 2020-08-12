@@ -75,6 +75,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
  * Copyright (c) 2018 Designing World - https://themeforest.net/user/designing-world
  */
 
+
 (function ($) {
     $.fn.classyNav = function (options) {
 

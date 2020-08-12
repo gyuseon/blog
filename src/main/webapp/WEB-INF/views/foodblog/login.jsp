@@ -146,13 +146,13 @@
                                     <li><a href="#">Recipes</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- 인스턴트</a></li>
+                                                <li><a href="/foodblog/category?c=101&l=2">- 햄버거</a></li>
+                                                <li><a href="/foodblog/category?c=102&l=2">- 피자</a></li>
+                                                <li><a href="/foodblog/category?c=103&l=2">- 소세지</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Fastfood</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Salad</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Soup</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="#">- Recipe</a></li>
@@ -205,7 +205,7 @@
     <div class="container-center">
     <div class="container-login100" style="background-image: url('/resources/login/images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-			<form method="post" action="/login" class="login100-form validate-form">
+			<form method="post" action="/foodblog/login" class="login100-form validate-form">
 				<span class="login100-form-title p-b-37">
 					로그인
 				</span>

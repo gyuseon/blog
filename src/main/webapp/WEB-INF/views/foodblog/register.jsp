@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="/resources/style.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+    
     <!-- validation 사용자 작성 코드 삽입-->
     <!-- 전제조건 1. jquery.min.js, 2. jquery.validate.js-->
 <!--===============================================================================================-->	
@@ -45,6 +46,7 @@
 	<link rel="stylesheet" type="text/css" href="/resources/login/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/resources/login/css/main.css">
 <!--===============================================================================================-->
+
 </head>
 
 
@@ -149,13 +151,13 @@
                                     <li><a href="#">Recipes</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- 인스턴트</a></li>
+                                                <li><a href="/foodblog/category?c=101&l=2">- 햄버거</a></li>
+                                                <li><a href="/foodblog/category?c=102&l=2">- 피자</a></li>
+                                                <li><a href="/foodblog/category?c=103&l=2">- 소세지</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Fastfood</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Salad</a></li>
+                                                <li><a href="/foodblog/category?c=100&l=2">- Soup</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="#">- Recipe</a></li>
@@ -208,7 +210,7 @@
  <div class="container-center">
 	<div class="container-login100" style="background-image: url('/resources/login/images/bg-01.jpg');">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-			<form id="regist" action="/register" method="post" class="login100-form validate-form">
+			<form id="regist" action="" method="post" class="login100-form validate-form">
 				<span class="login100-form-title p-b-37">
 					회원가입
 				</span>
@@ -267,7 +269,7 @@
 					<button type ="submit" class="login100-form-btn" >
 						입력
 					</button>
-					<button type ="button" class="login100-form-btn" onclick="location.href='/login'"  >
+					<button type ="button" class="login100-form-btn" onclick="location.href='/foodblog/login'"  >
 						돌아가기
 					</button>
 				</div>
@@ -322,6 +324,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/resources/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="/resources/js/active.js"></script>
+    
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<script src="/resources/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="/resources/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/resources/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/login/js/main.js"></script>
+	<script>
+		$("#userid").on("change",function(){
+		  $.ajax({
+			url : 'dupId',
+			type : 'get' ,
+			data : {
+				userid : $("#userid").val()
+			},
+			  
+		success:function(data){
+			if(data==='fail'){
+				alert("중복된 아이디 입니다.")
+			}	
+		},
+		error:function(xhr,txtStauts,error){
+			alert(xhr.responseText);
+			}
+		  })
+	})
+	</script>
+
 </body>
 
 </html>
