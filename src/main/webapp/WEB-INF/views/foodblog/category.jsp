@@ -122,41 +122,41 @@
                                     </li>
                                     <li><a href="#">Recipes</a>
                                         <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="/foodblog/category?c=100&l=2">- 인스턴트</a></li>
+                                             <ul class="single-mega cn-col-4">
+                                             
+                                                <li><a href="/foodblog/category?c=100&l=1">- 전체(인스턴트)</a></li>
                                                 <li><a href="/foodblog/category?c=101&l=2">- 햄버거</a></li>
                                                 <li><a href="/foodblog/category?c=102&l=2">- 피자</a></li>
                                                 <li><a href="/foodblog/category?c=103&l=2">- 소세지</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Fastfood</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Salad</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=104&l=2">- 라면</a></li>
+                                                <li><a href="/foodblog/category?c=105&l=2">- 떡볶이</a></li>
+                                                <li><a href="/foodblog/category?c=106&l=2">- 치킨</a></li>
+                                            
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=200&l=1">- 전체(파스타)</a></li>
+                                                <li><a href="/foodblog/category?c=201&l=2">- 까르보나라</a></li>
+                                                <li><a href="/foodblog/category?c=202&l=2">- 토마토</a></li>
+                                                <li><a href="/foodblog/category?c=203&l=2">- 알레 본골레</a></li>
+                                                <li><a href="/foodblog/category?c=204&l=2">- 오일</a></li>
+                                                <li><a href="/foodblog/category?c=205&l=2">- 크림</a></li>
+                                                <li><a href="/foodblog/category?c=206&l=2">- 명란젓</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=300&l=1">- 전체(한식)</a></li>
+                                                <li><a href="/foodblog/category?c=301&l=2">- 밥/죽/떡</a></li>
+                                                <li><a href="/foodblog/category?c=302&l=2">- 찌개/국/탕</a></li>
+                                                <li><a href="/foodblog/category?c=303&l=2">- 볶음/무침/구이</a></li>
+                                                <li><a href="/foodblog/category?c=304&l=2">- 김치/젓갈</a></li>
+                                                <li><a href="/foodblog/category?c=305&l=2">- 차</a></li>
+                                                <li><a href="/foodblog/category?c=306&l=2">- 간식</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=400&l=1">- 전체(고기)</a></li>
+                                                <li><a href="/foodblog/category?c=401&l=2">- 소고기</a></li>
+                                                <li><a href="/foodblog/category?c=402&l=2">- 돼지고기</a></li>
+                                                <li><a href="/foodblog/category?c=403&l=2">- 양고기</a></li>
+                                                <li><a href="/foodblog/category?c=404&l=2">- 흑염소</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -317,12 +317,13 @@
                         <div class="row">
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="form-group mb-30">
-                                    <select class="form-control" id="recipe">
-                                      <option value="">Recipe</option>
-                                      <option value="">Recipe 1</option>
-                                      <option value="">Recipe 2</option>
-                                      <option value="">Recipe 3</option>
-                                      <option value="">Recipe 4</option>
+                                    <select class="form-control" name="type" id="recipe">
+                                      <option value=""<c:out value="${empty cri.type?'selected':''}"/>>-----</option>
+                                      <option value="1">인스턴스</option>
+                                      <option value="2">파스타</option>
+                                      <option value="3">한식</option>
+                                      <option value="4">고기</option>
+                                      
                                     </select>
                                 </div>
                             </div>
@@ -370,8 +371,9 @@
                 <!-- Post Area -->
                 <div class="col-12 col-lg-8 col-xl-9">
                     <!-- Single Blog Post -->
-                        <c:forEach var ="list" items = "${list}" >
-                         
+                        
+                        <c:forEach var ="list"  items = "${list}" >
+                          
                     <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
                         <!-- Blog Thumbnail -->
                         <div class="blog-thumbnail">
@@ -388,97 +390,10 @@
                             <p>${list.title}</p>
                         </div>
                     </div>
+                    
                     </c:forEach>
-							
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
-                        <!-- Blog Thumbnail -->
-                        <div class="blog-thumbnail">
-                            <img src="/resources/img/bg-img/10.jpg" alt="">
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <a href="#" class="post-tag">The Best</a>
-                            <a href="#" class="post-title">Mushrooms with pork chop</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-date">July 11, 2018</a>
-                                <a href="#" class="post-author">By Julia Stiles</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique justo id elit bibendum pharetra non vitae lectus. Mauris libero felis, dapibus a ultrices sed, commodo vitae odio. Sed auctor tellus quis arcu tempus.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
-                        <!-- Blog Thumbnail -->
-                        <div class="blog-thumbnail">
-                            <img src="/resources/img/bg-img/11.jpg" alt="">
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <a href="#" class="post-tag">The Best</a>
-                            <a href="#" class="post-title">Birthday cake with chocolate</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-date">July 11, 2018</a>
-                                <a href="#" class="post-author">By Julia Stiles</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique justo id elit bibendum pharetra non vitae lectus. Mauris libero felis, dapibus a ultrices sed, commodo vitae odio. Sed auctor tellus quis arcu tempus.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
-                        <!-- Blog Thumbnail -->
-                        <div class="blog-thumbnail">
-                            <img src="/resources/img/bg-img/9.jpg" alt="">
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <a href="#" class="post-tag">The Best</a>
-                            <a href="#" class="post-title">Friend eggs with ham</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-date">July 11, 2018</a>
-                                <a href="#" class="post-author">By Julia Stiles</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique justo id elit bibendum pharetra non vitae lectus. Mauris libero felis, dapibus a ultrices sed, commodo vitae odio. Sed auctor tellus quis arcu tempus.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
-                        <!-- Blog Thumbnail -->
-                        <div class="blog-thumbnail">
-                            <img src="/resources/img/bg-img/10.jpg" alt="">
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <a href="#" class="post-tag">The Best</a>
-                            <a href="#" class="post-title">Mushrooms with pork chop</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-date">July 11, 2018</a>
-                                <a href="#" class="post-author">By Julia Stiles</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique justo id elit bibendum pharetra non vitae lectus. Mauris libero felis, dapibus a ultrices sed, commodo vitae odio. Sed auctor tellus quis arcu tempus.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
-                        <!-- Blog Thumbnail -->
-                        <div class="blog-thumbnail">
-                            <img src="/resources/img/bg-img/11.jpg" alt="">
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <a href="#" class="post-tag">The Best</a>
-                            <a href="#" class="post-title">Birthday cake with chocolate</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-date">July 11, 2018</a>
-                                <a href="#" class="post-author">By Julia Stiles</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique justo id elit bibendum pharetra non vitae lectus. Mauris libero felis, dapibus a ultrices sed, commodo vitae odio. Sed auctor tellus quis arcu tempus.</p>
-                        </div>
-                    </div>
+						 	
+                    
                 </div>
 
                 <!-- Sidebar Area -->
@@ -605,17 +520,33 @@
                 <div class="col-12">
                     <div class="pagination-area mt-70">
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                            </ul>
+                            <div class="text-center">
+                             <ul class="pagination">
+                            	<c:if test="${PageVO.prev}">
+                                <li class="page-item"><a class="page-link" href="${PageVO.startPage-1}">Previous</a></li>
+                                </c:if>
+                                <c:forEach var="idx" begin="${PageVO.startPage}" end="${PageVO.endPage}">
+                                <li class="page-item ${PageVO.cri.pageNum==idx?'active':''}"><a class="page-link" href="${idx}">${idx}</a></li>
+                                </c:forEach>
+                                <c:if test="${PageVO.next}">
+                                <li class="page-item"><a class="page-link" href="${PageVO.endPage+1}">Next</a></li>
+                                </c:if>
+                            </ul> 
+                          </div>  
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <%-- 페이지번호를 누르면 동작하는 폼 --%>
+    <form action="category" id="actionForm">
+	<input type="hidden" name="pageNum" value="${PageVO.cri.pageNum}"/>
+	<input type="hidden" name="amount" value="${PageVO.cri.amount}"/>
+	<input type="hidden" name="level" value="${category.level}"/>
+	<input type="hidden" name="cateCode" value="${category.cateCode}"/>
+	
+	</form>
     <!-- ##### Catagory Post Area End ##### -->
 
     <!-- ##### Instagram Area Start ##### -->
@@ -730,6 +661,25 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/resources/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="/resources/js/active.js"></script>
+    
+     <script>
+ $(function(){
+     //사용자가 페이지 번호를 누르면 생기는 스크립트
+	 	// 전송해야 할 폼 가져온 후
+	 	let actionForm = $("#actionForm");
+	 //사용자가 페이지 번호를 누르면 동작하는 스크립트
+	 $(".page-item a").click(function(e){
+	 // a 태그의 동작 막기
+		e.preventDefault();	 
+	 // (전송해야 할 폼 가져온 후) pageNum 의 값을 변경한 후
+	 	actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+	 // 폼 전송하기
+	 	actionForm.submit();
+		 
+	 })
+ })
+    </script>
+    
 </body>
 
 </html>

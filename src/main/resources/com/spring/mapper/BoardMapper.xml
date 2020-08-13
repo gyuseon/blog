@@ -18,7 +18,8 @@
 	
 	<!-- 레시피 리스트 -->
 	<select id="list" resultType="com.spring.domain.BoardVO">
-		select bnum, bname, writer, catecode,bdate, bdes, bimg, thumbimg,title from write_board order by bnum desc
+		select bnum, bname, writer, catecode,bdate, bdes, bimg, thumbimg,title 
+		from write_board order by bnum desc
 	</select>
 	
 	
@@ -68,10 +69,12 @@
 		from (select /*+INDEX_DESC(write_board pk_write_board) */ 
 		rownum rn,bnum,bname,bimg,thumbimg,bdate,title,writer
 		from write_board 
-		where bnum>0 and rownum <= (#{pageNum} * #{amount})) 
+		where bnum>0  and rownum <= (#{pageNum} * #{amount})) 
 		where rn> ((#{pageNum}-1)*#{amount})
 		]]>   
 		</select>  
+		<!-- and catecode = #{catecode} -->
+		
 		
 		<select id="total" resultType="int" >
 		select count(*) from write_board where bnum >0

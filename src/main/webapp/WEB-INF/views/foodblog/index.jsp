@@ -119,43 +119,43 @@
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </li>
+                                            
                                     <li><a href="#">Recipes</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="/foodblog/category?c=100&l=2">- 인스턴트</a></li>
-                                                <li><a href="/foodblog/category?c=101&l=2">- 햄버거</a></li>
+                                                <li><a href="/foodblog/category?cateCode=100&level=1" >- 전체(인스턴트)</a></li>
+                                                <li><a href="/foodblog/category?cateCode=101&level=2" >- 햄버거</a></li>
                                                 <li><a href="/foodblog/category?c=102&l=2">- 피자</a></li>
                                                 <li><a href="/foodblog/category?c=103&l=2">- 소세지</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Fastfood</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Salad</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=104&l=2">- 라면</a></li>
+                                                <li><a href="/foodblog/category?c=105&l=2">- 떡볶이</a></li>
+                                                <li><a href="/foodblog/category?c=106&l=2">- 치킨</a></li>
+                                            
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=200&l=1">- 전체(파스타)</a></li>
+                                                <li><a href="/foodblog/category?c=201&l=2">- 까르보나라</a></li>
+                                                <li><a href="/foodblog/category?c=202&l=2">- 토마토</a></li>
+                                                <li><a href="/foodblog/category?c=203&l=2">- 알레 본골레</a></li>
+                                                <li><a href="/foodblog/category?c=204&l=2">- 오일</a></li>
+                                                <li><a href="/foodblog/category?c=205&l=2">- 크림</a></li>
+                                                <li><a href="/foodblog/category?c=206&l=2">- 명란젓</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=300&l=1">- 전체(한식)</a></li>
+                                                <li><a href="/foodblog/category?c=301&l=2">- 밥/죽/떡</a></li>
+                                                <li><a href="/foodblog/category?c=302&l=2">- 찌개/국/탕</a></li>
+                                                <li><a href="/foodblog/category?c=303&l=2">- 볶음/무침/구이</a></li>
+                                                <li><a href="/foodblog/category?c=304&l=2">- 김치/젓갈</a></li>
+                                                <li><a href="/foodblog/category?c=305&l=2">- 차</a></li>
+                                                <li><a href="/foodblog/category?c=306&l=2">- 간식</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                                <li><a href="/foodblog/category?c=400&l=1">- 전체(고기)</a></li>
+                                                <li><a href="/foodblog/category?c=401&l=2">- 소고기</a></li>
+                                                <li><a href="/foodblog/category?c=402&l=2">- 돼지고기</a></li>
+                                                <li><a href="/foodblog/category?c=403&l=2">- 양고기</a></li>
+                                                <li><a href="/foodblog/category?c=404&l=2">- 흑염소</a></li>
                                             </ul>
                                         </div>
                                     </li>

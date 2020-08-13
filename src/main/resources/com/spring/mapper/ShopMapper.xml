@@ -3,12 +3,79 @@
 <mapper namespace="com.spring.mapper.ShopMapper">
 
 	<!-- 카테고리별 음식 리스트 -->
-	<select id="category" resultType="com.spring.domain.BoardViewVO">
-	    select g.bnum, g.bname, g.catecode, c.cateCodeRef, c.cateName, g.thumbimg, g.bimg, bdes, bdate, cooktime, serving, temperature, difficult ,title, writer 
+	 <select id="category_1" resultType="com.spring.domain.BoardViewVO">
+	    select g.bnum, g.bname, g.cateCode, c.cateCodeRef, c.cateName, g.thumbimg, g.bimg, bdes, bdate, cooktime, serving, temperature, difficult ,title, writer 
+	    from write_board g 
+	    inner join board_category c 
+	    on g.cateCode= c.cateCode
+	    where g.cateCode= #{cateCode}
+	    or c.cateCodeRef= #{cateCodeRef}
+	</select> 
+
+	 <!-- 카테고리별 음식 리스트 -->
+	 <select id="category_2" resultType="com.spring.domain.BoardViewVO">
+	    select g.bnum, g.bname, g.cateCode, c.cateCodeRef, c.cateName, g.thumbimg, g.bimg, bdes, bdate, cooktime, serving, temperature, difficult ,title, writer 
 	    from write_board g 
 	    inner join board_category c 
 	    on g.cateCode = c.cateCode 
 	    where g.cateCode = #{cateCode}
+	</select> 
+	
+	
+	<select id="selectAll" resultType="com.spring.domain.BoardViewVO">
+	<![CDATA[
+		select * 
+		from (select /*+INDEX_DESC(write_board pk_write_board) */ 
+		rownum rn,bnum,bname,bimg,thumbimg,bdate,title,writer
+		from write_board where bnum>0 
+		]]>
+		<include refid = "criteria"></include>
+		<![CDATA[
+		and rownum <= (2 * 10)) 
+		where rn> ((2-1)*10)
+		]]>
 	</select>
+	
+	<select id="total" resultType="int" >
+		select count(*) from write_board where 
+		<include refid = "criteria"></include>
+		bnum >0
+		</select>
+	
+	<!-- 전체 게시물 가져오기 -->
+ 		<select id="selectAll2" resultType="com.spring.domain.BoardViewVO">
+		<!-- select * from spring_board where bno > 0 order by bno desc
+		<![CATA[]]> == 크다 작다 꺽세 사용할때 요류가 나오는데 그걸 없애줌 -->
+		<![CDATA[ 
+		select * 
+		from (select /*+INDEX_DESC(write_board pk_write_board) */ 
+		rownum rn,bnum,bname,bimg,thumbimg,bdate,title,writer
+		from write_board 
+		where bnum>0 and catecode = #{catecode} and rownum <= (#{pageNum} * #{amount})) 
+		where rn> ((#{pageNum}-1)*#{amount})
+		]]>   
+		</select>  
+		 
+	
+	
+	<!-- 동적 sql 작성 -->
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
+			<foreach collection="typeArr" item="level">
+				<trim prefix="OR">
+					<choose><!-- 인스턴트,한식,양식 -->
+						<when test="level=='1'.toString()">
+							cateCode like #{keyword}||'%'
+						</when>
+						<when test="level=='2'.toString()">
+							cateCode like #{keyword}
+						</when>						
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	
 
 </mapper>

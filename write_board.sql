@@ -22,6 +22,7 @@ alter table write_board add(title varchar(200));  -- 제목
 
 alter table write_board modify(bdes varchar(4000));
 
+
 -- bdes 사이즈가 작아서 크게 올리기위한 방법
 alter table write_board add(bdes2 clob);
 update WRITE_BOARD set bdes2 = bdes;
@@ -50,13 +51,31 @@ insert into BOARD_CATEGORY (cateName, cateCode) values('인스턴트','100');
 insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('햄버거','101','100');
 insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('피자','102','100');
 insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('소세지','103','100');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('라면','104','100');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('떡볶이','105','100');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('치킨','106','100');
 
 insert into BOARD_CATEGORY (cateName, cateCode) values('파스타','200');
 insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('까르보나라','201','200');
 insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('토마토','202','200');
 insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('알레 본골레','203','200');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('오일','204','200');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('크림','205','200');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('명란젓','206','200');
 
-insert into BOARD_CATEGORY (cateName, cateCode) values('샐러드','300');
+insert into BOARD_CATEGORY (cateName, cateCode) values('한식','300');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('밥/죽/떡','301','300');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('찌개/국/탕','302','300');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('볶음/무침/구이','303','300');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('김치/젓갈','304','300');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('차','305','300');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('간식','306','300');
+
+insert into BOARD_CATEGORY (cateName, cateCode) values('고기','400');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('소고기','401','400');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('돼지고기','402','400');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('양고기','403','400');
+insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('흑염소','404','400');
 
 
 select level, cateName, cateCode, cateCodeRef from board_category

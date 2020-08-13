@@ -22,7 +22,7 @@ public class BoardViewVO {
 	private String writer;		//累己磊
 	private String title;		//力格
 	
-	private String cateCodeRef;
+	private int cateCodeRef;
 	private String cateName;
 	
 	private String thumbimg;	//芥匙老
