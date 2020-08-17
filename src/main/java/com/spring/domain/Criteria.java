@@ -9,22 +9,16 @@ public class Criteria {
 
 	private int pageNum; 	//페이지번호
 	private int amount; 	//한 페이지 당 보여줄 게시물 수
-	
-	private String type; //검색조건
-	private String keyword; //검색어
+	private String cateCode;
 	
 	public Criteria() {
-		this(1,10);
+		this.pageNum = 1;
+		this.amount = 10;
+		this.cateCode = "100";
 	}
 
 	public Criteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 	}
-	
-	// type 값을 받아서 배열로 리턴
-		// type : T{"T"}, C{"C"}, W{"W"}, TC{"T","C"}, TW{"T","W"}, TCW {"T","C","W"}
-		public String[] getTypeArr() {
-			return type == null? new String[]{}:type.split("");
-		}
 }

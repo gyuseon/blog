@@ -88,13 +88,15 @@ public class BoardController {
 	public void boardList(Model model,Criteria cri) {
 		log.info("boardList e");
 		log.info("pageNum = " + cri.getPageNum());
+		log.info("Cri : "+cri.getCateCode());
 		//현재 페이지에 보여 줄 게시물
 		 List<BoardVO> list = service.getList(cri); 
 		/* List<BoardVO> list = service.list(); */
 		model.addAttribute("list",list);
 		
 		//하단의 페이지 나누기와 관련된 정보
-		model.addAttribute("PageVO", new PageVO(cri, service.total()));
+		model.addAttribute("PageVO", new PageVO(cri, service.total(cri)));
+		
 		
 	}
 	

@@ -40,6 +40,7 @@ public class ShopController {
 		log.info("cateCode =========" + cate);
 		
 		log.info("list cri : " +cri);
+		
 		List<BoardViewVO> list = service.selectAll(cri);
 		model.addAttribute("list",list);
 		
@@ -59,7 +60,7 @@ public class ShopController {
 		 //model.addAttribute("list",list1);
 		 
 		//하단의 페이지 나누기와 관련된 정보
-		model.addAttribute("PageVO", new PageVO(cri, service1.total()));
+		model.addAttribute("PageVO", new PageVO(cri, service1.total(cri)));
 		
 	}
 

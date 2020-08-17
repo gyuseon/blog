@@ -58,10 +58,11 @@ public class BoardServiceImpl implements BoardService {
 	 return mapper.selectAll(cri); 
 	 }
 
+
 	@Override
-	public int total() {
-		
-		return mapper.total();
+	public int total(Criteria cri) {
+
+		return mapper.total(cri);
 	}
 	 
 

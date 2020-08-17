@@ -65,6 +65,7 @@
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
+
         <!-- Top Header Area -->
         <div class="top-header-area bg-img bg-overlay" style="background-image: url(/resources/img/bg-img/header.jpg);">
             <div class="container h-100">
@@ -124,13 +125,13 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="/foodblog/index">Home</a></li>
+                                    <li><a href="index.html">Home</a></li>
                                     <li><a href="#">About Us</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="/foodblog/index">Home</a></li>
-                                            <li><a href="catagory.html">Catagory</a></li>
-                                            <li><a href="catagory-post.html">Catagory Post</a></li>
+                                            <li><a href="/foodblog/category">Catagory</a></li>
+                                            <li><a href="/foodblog/boardList">boardList</a></li>
                                             <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="receipe.html">Recipe</a></li>
                                             <li><a href="contact.html">Contact</a></li>
@@ -138,41 +139,39 @@
                                     </li>
                                     <li><a href="#">Recipes</a>
                                         <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="/foodblog/category?c=100&l=2">- 인스턴트</a></li>
-                                                <li><a href="/foodblog/category?c=101&l=2">- 햄버거</a></li>
-                                                <li><a href="/foodblog/category?c=102&l=2">- 피자</a></li>
-                                                <li><a href="/foodblog/category?c=103&l=2">- 소세지</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Fastfood</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Salad</a></li>
-                                                <li><a href="/foodblog/category?c=100&l=2">- Soup</a></li>
+                                             <ul class="single-mega cn-col-4 instance-menu">
+                                                <li><a href="100">- 전체(인스턴트)</a></li>
+                                                <li><a href="101">- 햄버거</a></li>
+                                                <li><a href="102">- 피자</a></li>
+                                                <li><a href="103">- 소세지</a></li>
+                                                <li><a href="104">- 라면</a></li>
+                                                <li><a href="105">- 떡볶이</a></li>
+                                                <li><a href="106">- 치킨</a></li>
                                             </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                            <ul class="single-mega cn-col-4 instance-menu">
+                                                <li><a href="200">- 전체(파스타)</a></li>
+                                                <li><a href="201">- 까르보나라</a></li>
+                                                <li><a href="202">- 토마토</a></li>
+                                                <li><a href="203">- 알레 본골레</a></li>
+                                                <li><a href="204">- 오일</a></li>
+                                                <li><a href="205">- 크림</a></li>
+                                                <li><a href="206">- 명란젓</a></li>
                                             </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                            <ul class="single-mega cn-col-4 instance-menu">
+                                                <li><a href="300">- 전체(한식)</a></li>
+                                                <li><a href="301">- 밥/죽/떡</a></li>
+                                                <li><a href="302">- 찌개/국/탕</a></li>
+                                                <li><a href="303">- 볶음/무침/구이</a></li>
+                                                <li><a href="304">- 김치/젓갈</a></li>
+                                                <li><a href="305">- 차</a></li>
+                                                <li><a href="306">- 간식</a></li>
                                             </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">- Recipe</a></li>
-                                                <li><a href="#">- Bread</a></li>
-                                                <li><a href="#">- Breakfast</a></li>
-                                                <li><a href="#">- Meat</a></li>
-                                                <li><a href="#">- Fastfood</a></li>
-                                                <li><a href="#">- Salad</a></li>
-                                                <li><a href="#">- Soup</a></li>
+                                            <ul class="single-mega cn-col-4 instance-menu">
+                                                <li><a href="400">- 전체(고기)</a></li>
+                                                <li><a href="401">- 소고기</a></li>
+                                                <li><a href="402">- 돼지고기</a></li>
+                                                <li><a href="403">- 양고기</a></li>
+                                                <li><a href="404">- 흑염소</a></li>
                                             </ul>
                                         </div>
                                     </li>

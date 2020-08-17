@@ -69,7 +69,11 @@
 		from (select /*+INDEX_DESC(write_board pk_write_board) */ 
 		rownum rn,bnum,bname,bimg,thumbimg,bdate,title,writer
 		from write_board 
-		where bnum>0  and rownum <= (#{pageNum} * #{amount})) 
+		where bnum>0  and rownum <= (#{pageNum} * #{amount})
+		]]> 
+			<include refid = "criteria"></include>
+		<![CDATA[
+		) 
 		where rn> ((#{pageNum}-1)*#{amount})
 		]]>   
 		</select>  
@@ -77,7 +81,9 @@
 		
 		
 		<select id="total" resultType="int" >
-		select count(*) from write_board where bnum >0
+		select count(*) from write_board where 
+		bnum >0
+		<include refid = "criteria"></include>
 		</select>
 		
 		<!-- <include refid="criteria"></include>
@@ -93,4 +99,89 @@
 	</select> -->
 	
 	
+	<!-- 동적 sql 작성 -->
+	<sql id="criteria">
+		<trim prefix="and " suffix=" " prefixOverrides="OR">
+			<choose><!-- 인스턴트,한식,양식 -->
+				<when test="cateCode == '100'.toString()">
+					cateCode like '1'||'%'
+				</when>
+				<when test="cateCode == '101'.toString()">
+					cateCode like '101'
+				</when>	
+				<when test="cateCode == '102'.toString()">
+					cateCode like '102'
+				</when>	
+				<when test="cateCode == '103'.toString()">
+					cateCode like '103'
+				</when>	
+				<when test="cateCode == '104'.toString()">
+					cateCode like '104'
+				</when>	
+				<when test="cateCode == '105'.toString()">
+					cateCode like '105'
+				</when>	
+				<when test="cateCode == '106'.toString()">
+					cateCode like '106'
+				</when>						
+				<when test="cateCode == '200'.toString()">
+					cateCode like '2'||'%'
+				</when>
+				<when test="cateCode == '201'.toString()">
+					cateCode like '201'
+				</when>	
+				<when test="cateCode == '202'.toString()">
+					cateCode like '202'
+				</when>	
+				<when test="cateCode == '203'.toString()">
+					cateCode like '203'
+				</when>	
+				<when test="cateCode == '204'.toString()">
+					cateCode like '204'
+				</when>	
+				<when test="cateCode == '205'.toString()">
+					cateCode like '205'
+				</when>	
+				<when test="cateCode == '206'.toString()">
+					cateCode like '206'
+				</when>
+				<when test="cateCode == '300'.toString()">
+					cateCode like '3'||'%'
+				</when>
+				<when test="cateCode == '301'.toString()">
+					cateCode like '301'
+				</when>	
+				<when test="cateCode == '302'.toString()">
+					cateCode like '302'
+				</when>	
+				<when test="cateCode == '303'.toString()">
+					cateCode like '303'
+				</when>	
+				<when test="cateCode == '304'.toString()">
+					cateCode like '304'
+				</when>	
+				<when test="cateCode == '305'.toString()">
+					cateCode like '305'
+				</when>	
+				<when test="cateCode == '306'.toString()">
+					cateCode like '306'
+				</when>
+				<when test="cateCode == '400'.toString()">
+					cateCode like '4'||'%'
+				</when>
+				<when test="cateCode == '401'.toString()">
+					cateCode like '401'
+				</when>	
+				<when test="cateCode == '402'.toString()">
+					cateCode like '402'
+				</when>	
+				<when test="cateCode == '403'.toString()">
+					cateCode like '403'
+				</when>	
+				<when test="cateCode == '404'.toString()">
+					cateCode like '404'
+				</when>	
+			</choose>
+		</trim>
+	</sql>
 </mapper>

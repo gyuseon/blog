@@ -50,8 +50,15 @@
 		select * 
 		from (select /*+INDEX_DESC(write_board pk_write_board) */ 
 		rownum rn,bnum,bname,bimg,thumbimg,bdate,title,writer
-		from write_board 
-		where bnum>0 and catecode = #{catecode} and rownum <= (#{pageNum} * #{amount})) 
+		from write_board
+		
+
+		
+		where bnum>0 and rownum <= (#{pageNum} * #{amount})
+		]]>
+				<include refid = "criteria"></include>
+		<![CDATA[ 
+		) 
 		where rn> ((#{pageNum}-1)*#{amount})
 		]]>   
 		</select>  
@@ -60,19 +67,15 @@
 	
 	<!-- 동적 sql 작성 -->
 	<sql id="criteria">
-		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
-			<foreach collection="typeArr" item="level">
-				<trim prefix="OR">
-					<choose><!-- 인스턴트,한식,양식 -->
-						<when test="level=='1'.toString()">
-							cateCode like #{keyword}||'%'
-						</when>
-						<when test="level=='2'.toString()">
-							cateCode like #{keyword}
-						</when>						
-					</choose>
-				</trim>
-			</foreach>
+		<trim prefix="and " suffix=" " prefixOverrides="OR">
+			<choose><!-- 인스턴트,한식,양식 -->
+				<when test="cateCode == '100'.toString()">
+					cateCode like '1'||'%'
+				</when>
+				<when test="cateCode == '101'.toString()">
+					cateCode like '101'
+				</when>						
+			</choose>
 		</trim>
 	</sql>
 	

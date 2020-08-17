@@ -30,7 +30,7 @@ public interface BoardMapper {
 	//
 	public List<BoardVO> selectAll(Criteria cri); 
 	
-	public int total();
+	public int total(Criteria cri);
 
 
 }
