@@ -31,7 +31,7 @@
 
 	<!-- 상품 조회 + 카테고리 조인-->
 	<select id="view" resultType="com.spring.domain.BoardViewVO">
-	 select g.bnum, g.bname, g.catecode, c.cateCodeRef, c.cateName, g.thumbimg, g.bimg, bdes, bdate, cooktime, serving, temperature, difficult ,title, writer
+	 select g.bnum, g.bname, g.catecode, c.cateCodeRef, c.cateName, g.thumbimg, g.bimg, bdes, bdate, cooktime, serving, temperature, difficult ,title, writer,readcount
 	 from write_board g
 	 inner join board_category c
 	 on g.cateCode = c.cateCode 
@@ -59,6 +59,13 @@
 	<delete id="delete">
 	 delete write_board where bnum = #{bnum}
 	</delete>
+	
+	<update id="readcount" parameterType="int">
+		update write_board set readcount = readcount + 1 where bnum = #{bnum}
+	</update>
+	
+	
+	
 	
 	<!-- 전체 게시물 가져오기 -->
  		<select id="selectAll" resultType="com.spring.domain.BoardVO">

@@ -131,9 +131,8 @@
                                         <ul class="dropdown">
                                             <li><a href="/foodblog/index">Home</a></li>
                                             <li><a href="/foodblog/category">Catagory</a></li>
-                                            <li><a href="/foodblog/boardList">boardList</a></li>
+                                            <li><a href="/foodblog/boardList">레시피</a></li>
                                             <li><a href="single-post.html">Single Post</a></li>
-                                            <li><a href="receipe.html">Recipe</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </li>

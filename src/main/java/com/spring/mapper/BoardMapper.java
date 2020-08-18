@@ -31,6 +31,9 @@ public interface BoardMapper {
 	public List<BoardVO> selectAll(Criteria cri); 
 	
 	public int total(Criteria cri);
+	
+	//Á¶È¸¼ö
+	public boolean readcount(int bnum);
 
 
 }

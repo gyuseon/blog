@@ -31,5 +31,7 @@ public interface BoardService {
 	 public List<BoardVO> getList(Criteria cri); 
 	 
 	 public int total(Criteria cri);
-		
+	 
+		//Á¶È¸¼ö
+		public boolean readcount(int bnum);
 }

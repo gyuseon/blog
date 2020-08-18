@@ -246,7 +246,7 @@
                     <div class="recipe-info">
                         <h5>Info</h5>
                         <ul class="info-data">
-                            <li><img src="/resources/img/core-img/eye.png" alt=""> <span>1,577 Views</span></li>
+                            <li><img src="/resources/img/core-img/eye.png" alt=""> <span>${view.readcount}</span></li>
                             <li><img src="/resources/img/core-img/alarm-clock.png" alt=""> <span>${view.cooktime}</span></li>
                             <li><img src="/resources/img/core-img/tray.png" alt=""> <span>${view.serving}</span></li>
                             <li><img src="/resources/img/core-img/sandwich.png" alt=""> <span>${view.difficult}</span></li>

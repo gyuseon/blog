@@ -14,12 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.domain.BoardVO;
 import com.spring.domain.BoardViewVO;
@@ -108,18 +109,33 @@ public class BoardController {
 		BoardViewVO view = service.view(bnum);
 		
 		model.addAttribute("view",view);
+		
 	}
+	
 	
 	//레시피 보기
 	@GetMapping("/recipe")
 	public void recipe(@RequestParam("n") int bnum, Model model) {
 		log.info("recipe");
 
-		
 		BoardViewVO view = service.view(bnum);
-		
+
 		model.addAttribute("view",view);
+		
 	}
+	//레시피 보기
+		@GetMapping("/readcount")
+		public String readcount(@RequestParam("n") int bnum, RedirectAttributes rttr) {
+
+			service.readcount(bnum);
+			rttr.addAttribute("n", bnum);
+			log.info("조회수");
+			
+			return "redirect:foodblog/recipe";
+			
+		}
+		
+	
 	
 	//레시피 수정
 		@GetMapping("/modify")
@@ -233,6 +249,8 @@ public class BoardController {
 		 
 		}
 		
+		
+
 		
 	
 

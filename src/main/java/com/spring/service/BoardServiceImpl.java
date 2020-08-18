@@ -36,7 +36,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardViewVO view(int bnum) {
-		
+		 mapper.readcount(bnum);
 		return mapper.view(bnum);
 	}
 
@@ -64,6 +64,15 @@ public class BoardServiceImpl implements BoardService {
 
 		return mapper.total(cri);
 	}
+
+	@Override
+	public boolean readcount(int bnum) {
+		return mapper.readcount(bnum);
+	}
+
+	
+
+
 	 
 
 
