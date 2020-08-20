@@ -92,7 +92,7 @@ public class BoardController {
 		log.info("Cri : "+cri.getCateCode());
 		//현재 페이지에 보여 줄 게시물
 		 List<BoardVO> list = service.getList(cri); 
-		/* List<BoardVO> list = service.list(); */
+		 //List<BoardVO> list = service.list(); 
 		model.addAttribute("list",list);
 		
 		//하단의 페이지 나누기와 관련된 정보
@@ -116,27 +116,25 @@ public class BoardController {
 	//레시피 보기
 	@GetMapping("/recipe")
 	public void recipe(@RequestParam("n") int bnum, Model model) {
-		log.info("recipe");
-
+		log.info("recipe" + bnum);
 		BoardViewVO view = service.view(bnum);
-
-		model.addAttribute("view",view);
-		
+		model.addAttribute("view",view);	
 	}
-	//레시피 보기
-		@GetMapping("/readcount")
-		public String readcount(@RequestParam("n") int bnum, RedirectAttributes rttr) {
+	//조회수
+	@GetMapping("/readcount")
+	public String readcount(@RequestParam("n") int bnum, RedirectAttributes rttr) {
+		log.info("조회수 "+bnum);
+		
 
-			service.readcount(bnum);
+		if(service.readcount(bnum) > 0) {		
 			rttr.addAttribute("n", bnum);
-			log.info("조회수");
-			
-			return "redirect:foodblog/recipe";
-			
+			return "redirect:recipe";			
+		}else {
+			return "redirect:boardList";
 		}
 		
 	
-	
+	}
 	//레시피 수정
 		@GetMapping("/modify")
 		public void modify(@RequestParam("n") int bnum, Model model) {
@@ -186,7 +184,7 @@ public class BoardController {
 			return "redirect:/foodblog/boardList";
 		}
 		
-	//레시피 삭제
+		//레시피 삭제
 		@PostMapping("/delete")
 		public String postdelete(@RequestParam("n") int bnum) {
 			log.info("삭제");
@@ -249,9 +247,11 @@ public class BoardController {
 		 
 		}
 		
-		
+		@GetMapping("/contact")
+		public void contact() {
+			log.info("문의");
 
-		
+		}
 	
 
 	

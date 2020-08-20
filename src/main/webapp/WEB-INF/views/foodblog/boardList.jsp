@@ -200,7 +200,7 @@
                         </div>
                         <!-- Blog Content -->
                         <div class="blog-content">
-                            <a href="/foodblog/recipe?n=${list.bnum}" class="post-title">${list.bname}</a>
+                            <a href="readcount?n=${list.bnum}" class="post-title">${list.bname}</a>
                             <div class="post-meta">
                                 <a href="#" class="post-date">${list.bdate}</a>
                                 <a href="#" class="post-author">${list.writer}</a>

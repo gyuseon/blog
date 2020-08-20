@@ -32,6 +32,6 @@ public interface BoardService {
 	 
 	 public int total(Criteria cri);
 	 
-		//조회수
-		public boolean readcount(int bnum);
+	//조회수
+	public int readcount(int bnum);
 }

@@ -81,3 +81,7 @@ insert into BOARD_CATEGORY (cateName, cateCode, catecoderef) values('흑염소','40
 select level, cateName, cateCode, cateCodeRef from board_category
     start with cateCodeRef is null connect by prior cateCode = cateCodeRef;
 -- 카테고리의 계층에 맞게 level값이 커지는 구조입니다. 이 쿼리를 이용하면 level값만 확인해도 상위/하위를 구분할 수 있습니다.
+
+    
+
+

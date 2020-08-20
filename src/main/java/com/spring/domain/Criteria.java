@@ -11,14 +11,19 @@ public class Criteria {
 	private int amount; 	//한 페이지 당 보여줄 게시물 수
 	private String cateCode;
 	
+	private String type;
+	
 	public Criteria() {
 		this.pageNum = 1;
 		this.amount = 10;
-		this.cateCode = "100";
+		this.cateCode = "";
 	}
 
 	public Criteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 	}
+	
+	
+	
 }

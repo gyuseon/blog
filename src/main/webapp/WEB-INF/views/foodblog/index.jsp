@@ -133,23 +133,24 @@
     <div class="hero-area">
         <!-- Hero Post Slides -->
         <div class="hero-post-slides owl-carousel">
+        
+        	<!-- Single Slide -->
+            <div class="single-slide">
+                <!-- Blog Thumbnail -->
+                <div class="blog-thumbnail ">
+                	<ul class="instance-menu">
+                    <li><a href="101"><img src="/resources/img/bg-img/3.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <!-- Single Slide -->
             <div class="single-slide">
                 <!-- Blog Thumbnail -->
                 <div class="blog-thumbnail">
-                    <a href="#"><img src="/resources/img/bg-img/1.jpg" alt=""></a>
-                </div>
-
-                <!-- Blog Content -->
-                <div class="blog-content-bg">
-                    <div class="blog-content">
-                        <a href="#" class="post-tag">Healthy Food</a>
-                        <a href="#" class="post-title">Chicken Salad</a>
-                        <div class="post-meta">
-                            <a href="#" class="post-date">July 11, 2018</a>
-                            <a href="#" class="post-author">By Julia Stiles</a>
-                        </div>
-                    </div>
+                	<ul class="instance-menu">
+                    <li><a href="200"><img src="/resources/img/bg-img/200.jpg" alt=""></a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -157,59 +158,21 @@
             <div class="single-slide">
                 <!-- Blog Thumbnail -->
                 <div class="blog-thumbnail">
-                    <a href="#"><img src="/resources/img/bg-img/2.jpg" alt=""></a>
-                </div>
-
-                <!-- Blog Content -->
-                <div class="blog-content-bg">
-                    <div class="blog-content">
-                        <a href="#" class="post-tag">Healthy Food</a>
-                        <a href="#" class="post-title">Chicken Salad</a>
-                        <div class="post-meta">
-                            <a href="#" class="post-date">July 11, 2018</a>
-                            <a href="#" class="post-author">By Julia Stiles</a>
-                        </div>
-                    </div>
+                    <ul class="instance-menu">
+                    <li><a href="300"><img src="/resources/img/bg-img/300.jpg" alt=""></a></li>
+                    </ul>
                 </div>
             </div>
+
+            
 
             <!-- Single Slide -->
             <div class="single-slide">
                 <!-- Blog Thumbnail -->
                 <div class="blog-thumbnail">
-                    <a href="#"><img src="/resources/img/bg-img/3.jpg" alt=""></a>
-                </div>
-
-                <!-- Blog Content -->
-                <div class="blog-content-bg">
-                    <div class="blog-content">
-                        <a href="#" class="post-tag">Healthy Food</a>
-                        <a href="#" class="post-title">Chicken Salad</a>
-                        <div class="post-meta">
-                            <a href="#" class="post-date">July 11, 2018</a>
-                            <a href="#" class="post-author">By Julia Stiles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Slide -->
-            <div class="single-slide">
-                <!-- Blog Thumbnail -->
-                <div class="blog-thumbnail">
-                    <a href="#"><img src="/resources/img/bg-img/3.jpg" alt=""></a>
-                </div>
-
-                <!-- Blog Content -->
-                <div class="blog-content-bg">
-                    <div class="blog-content">
-                        <a href="#" class="post-tag">Healthy Food</a>
-                        <a href="#" class="post-title">Chicken Salad</a>
-                        <div class="post-meta">
-                            <a href="#" class="post-date">July 11, 2018</a>
-                            <a href="#" class="post-author">By Julia Stiles</a>
-                        </div>
-                    </div>
+                     <ul class="instance-menu">
+                    <li><a href="400"><img src="/resources/img/bg-img/400.jpg" alt=""></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -586,7 +549,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Active js -->
     <script src="/resources/js/active.js"></script>
     
-            <script>
+<script>
  $(function(){
      //사용자가 페이지 번호를 누르면 생기는 스크립트
 	 	// 전송해야 할 폼 가져온 후

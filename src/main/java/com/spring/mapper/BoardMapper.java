@@ -33,7 +33,7 @@ public interface BoardMapper {
 	public int total(Criteria cri);
 	
 	//Á¶È¸¼ö
-	public boolean readcount(int bnum);
+	public int readcount(int bnum);
 
 
 }

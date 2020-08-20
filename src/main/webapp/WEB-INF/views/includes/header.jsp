@@ -125,18 +125,15 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="/foodblog/index">Home</a></li>
-                                            <li><a href="/foodblog/category">Catagory</a></li>
-                                            <li><a href="/foodblog/boardList">레시피</a></li>
-                                            <li><a href="single-post.html">Single Post</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Recipes</a>
+                                    <li><a href="/foodblog/index">메인</a></li>
+                                    <li><a href="/foodblog/boardList">전체 레시피</a></li>
+                                    <!--<li><a href="#">Pages</a>
+                                         <ul class="dropdown">
+                                            <li><a href="/foodblog/index">메인</a></li>
+                                            <li><a href="/foodblog/contact">Contact</a></li>
+                                        </ul> 
+                                    </li>-->
+                                    <li><a href="#">레시피</a>
                                         <div class="megamenu">
                                              <ul class="single-mega cn-col-4 instance-menu">
                                                 <li><a href="100">- 전체(인스턴트)</a></li>
@@ -175,7 +172,7 @@
                                         </div>
                                     </li>
                                     <li><a href="single-post.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="foodblog/contact">Contact</a></li>
                                 </ul>
 
                                 <!-- Login/Register -->

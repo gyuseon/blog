@@ -12,13 +12,13 @@
 
 	<!-- 레시피 등록 -->
 	<insert id="board">
-		 insert into write_board (bnum, writer, bname, catecode, bdes, bimg, thumbimg, cooktime, serving, temperature, difficult, title)
-	     values (write_board_seq.nextval, #{writer}, #{bname}, #{catecode}, #{bdes}, #{bimg}, #{thumbimg}, #{cooktime}, #{serving}, #{temperature}, #{difficult}, #{title})
+		 insert into write_board (bnum, writer, bname, catecode, bdes, bimg, thumbimg, cooktime, serving, temperature, difficult, title,readcount)
+	     values (write_board_seq.nextval, #{writer}, #{bname}, #{catecode}, #{bdes}, #{bimg}, #{thumbimg}, #{cooktime}, #{serving}, #{temperature}, #{difficult}, #{title},#{readcount})
 	</insert>		
 	
 	<!-- 레시피 리스트 -->
 	<select id="list" resultType="com.spring.domain.BoardVO">
-		select bnum, bname, writer, catecode,bdate, bdes, bimg, thumbimg,title 
+		select bnum, bname, writer, catecode,bdate, bdes, bimg, thumbimg,title,readcount
 		from write_board order by bnum desc
 	</select>
 	
@@ -52,7 +52,7 @@
 	 temperature = #{temperature},
 	 difficult = #{difficult},
 	 title = #{title}
-	 where bnum = ${bnum}
+	 where bnum = #{bnum}
 	</update>
 	
 	<!-- 상품 삭제 -->
@@ -60,8 +60,8 @@
 	 delete write_board where bnum = #{bnum}
 	</delete>
 	
-	<update id="readcount" parameterType="int">
-		update write_board set readcount = readcount + 1 where bnum = #{bnum}
+	<update id="readcount">
+	update write_board set readcount=readcount+1 where bnum = #{bnum}
 	</update>
 	
 	
@@ -73,7 +73,7 @@
 		<![CATA[]]> == 크다 작다 꺽세 사용할때 요류가 나오는데 그걸 없애줌 -->
 		<![CDATA[ 
 		select * 
-		from (select /*+INDEX_DESC(write_board pk_write_board) */ 
+		from (select /*+INDEX_DESC(write_board SYS_C0011255) */ 
 		rownum rn,bnum,bname,bimg,thumbimg,bdate,title,writer
 		from write_board 
 		where bnum>0  and rownum <= (#{pageNum} * #{amount})
@@ -81,7 +81,7 @@
 			<include refid = "criteria"></include>
 		<![CDATA[
 		) 
-		where rn> ((#{pageNum}-1)*#{amount})
+		where rn> ((#{pageNum}-1)*#{amount}) order by bnum desc
 		]]>   
 		</select>  
 		<!-- and catecode = #{catecode} -->
@@ -110,6 +110,9 @@
 	<sql id="criteria">
 		<trim prefix="and " suffix=" " prefixOverrides="OR">
 			<choose><!-- 인스턴트,한식,양식 -->
+				<when test="cateCode == ''.toString()">
+					cateCode like '%%'
+				</when>
 				<when test="cateCode == '100'.toString()">
 					cateCode like '1'||'%'
 				</when>
