@@ -569,6 +569,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
  })
     </script>
     
+    <script src="/resources/js/reply.js"></script>
+    <script>
+    $(function(){
+    	
+    	// 현재 글의 글 번호 가져오기
+    	let bnum = ${view.bnum};
+    	
+    	//댓글 작업 호출
+    	//댓글 등록하기
+    	replyService.add({bno:bnum, replyer:'test', reply:'댓글 등록 테스트'},
+    			function(result){
+    			alert(result);
+    	});
+    	
+    	replyService.getList({bno:bnum, page:1}, function(result){
+    		console.log(result);
+    	})
+    })
+    </script>
+    
+    
     
 </body>
 

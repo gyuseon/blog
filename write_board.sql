@@ -83,5 +83,16 @@ select level, cateName, cateCode, cateCodeRef from board_category
 -- 카테고리의 계층에 맞게 level값이 커지는 구조입니다. 이 쿼리를 이용하면 level값만 확인해도 상위/하위를 구분할 수 있습니다.
 
     
+create table write_reply(
+	rno number(10) constraint pk_relpy primary key,
+	bno number(10) not null,
+	reply varchar2(1000) not null,
+	replyer varchar2(50) not null,
+	replydate date default sysdate,
+	updatedate date default sysdate,
+	constraint fk_write_reply foreign key(bno) references write_board(bnum)
+);
+
+
 
 
