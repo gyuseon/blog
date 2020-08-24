@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.domain.Criteria;
+import com.spring.domain.ReplyPageVO;
 import com.spring.domain.ReplyVO;
 import com.spring.mapper.ReplyMapper;
 
@@ -32,18 +33,18 @@ public class ReplyServiceImpl implements ReplyService {
 
 	@Override
 	public boolean replyDelete(int rno) {
+		
+		
 		return reply.delete(rno)==1?true:false;
 	}
 
 	@Override
-	public List<ReplyVO> replyList(Criteria cri, int bno) {
-		return reply.list(cri, bno);
+	public ReplyPageVO replyList(Criteria cri, int bno) {
+		
+		return new ReplyPageVO(reply.getCountByBno(bno),reply.list(cri, bno));
 	}
 
-	@Override
-	public int getCount(int bno) {
-		return reply.getCountByBno(bno);
-	}
+
 
 	
 

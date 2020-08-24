@@ -18,51 +18,59 @@
    <div id="container_box">
    		<h2>레시피 등록</h2>
    
-	<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	 <form role="form" method="post" autocomplete="off" enctype="multipart/form-data"> 
  
 	 <label>1차 분류</label>
-	 <select class="category1">
+	 <select class="custom-select category1">
 	  <option value="">전체</option>
 	 </select>
 	 
 	 <label>2차 분류</label>
-	 <select class="category2" name="catecode">
+	 <select class="custom-select category2" name="catecode">
 	  <option value="">전체</option>
 	 </select>
 	 
+	 
+	
+
+
+	 
+	 
 	 <div class="inputArea">
 	 <label for="gdswriter">글쓴이</label>
-	 <input type="text" id="writer" name="writer" value="${auth.userid}" readonly/>
+	 <input type="text" class="form-control" id="writer" name="writer" value="${auth.userid}" readonly/>
 	</div>
 	 
-	 
-	<div class="inputArea">
+	  <div class="form-row">
+	<div class="col-md-6 mb-3">
 	 <label for="gdsName">음식이름</label>
-	 <input type="text" id="bname" name="bname" />
+	 <input type="text" class="form-control" id="bname" name="bname" />
 	</div>
 	
-	<div class="inputArea">
+	<div class="col-md-6 mb-3">
 	 <label for="gdscooktime">조리시간</label>
-	 <input type="text" id="cooktime" name="cooktime" />
-	</div>
-	<div class="inputArea">
-	 <label for="gdsserving">몇인분</label>
-	 <input type="text" id="serving" name="serving" />
-	</div>
-	<div class="inputArea">
-	 <label for="gdstemperature">조리온도</label>
-	 <input type="text" id="temperature" name="temperature" />
-	</div>
-	<div class="inputArea">
-	 <label for="gdsdifficult">난이도</label>
-	 <input type="text" id="difficult" name="difficult" />
-	</div>
-	<div class="inputArea">
-	 <label for="gdstitle">제목</label>
-	 <input type="text" id="title" name="title" />
+	 <input type="text" class="form-control" id="cooktime" name="cooktime" />
 	</div>
 	
-	<div class="inputArea">
+	
+	<div class="col-md-6 mb-3">
+	 <label for="gdsserving">몇인분</label>
+	 <input type="text" class="form-control" id="serving" name="serving" />
+	</div>
+	<div class="col-md-6 mb-3">
+	 <label for="gdstemperature">조리온도</label>
+	 <input type="text" class="form-control" id="temperature" name="temperature" />
+	</div>
+	<div class="col-md-6 mb-3">
+	 <label for="gdsdifficult">난이도</label>
+	 <input type="text" class="form-control" id="difficult" name="difficult" />
+	</div>
+	<div class="col-md-6 mb-3">
+	 <label for="gdstitle">제목</label>
+	 <input type="text" class="form-control" id="title" name="title" />
+	</div>
+	</div>
+	<div class="col-md-6 mb-3">
 	 <label for="gdsDes">음식소개</label>
 	 <textarea rows="5" cols="50" id="bdes" name="bdes"></textarea>
 	 
@@ -79,10 +87,17 @@
 	 
 	  <%=request.getRealPath("/") %> 
 	 
-	 <div class="inputArea">
+	 
+	 <div class="custom-file">
+	  <input type="file" class="custom-file-input" id="bimg" name="file">
+	  <label class="custom-file-label" for="gdsimg">타이틀 이미지</label>
+	  <div class="select_img"><img src="" /></div>
+	
+	 
+	 <!-- <div class="inputArea">
 	 <label for="gdsimg">타이틀 이미지</label>
 	 <input type="file" id="bimg" name="file" />
-	 <div class="select_img"><img src="" /></div>
+	 <div class="select_img"><img src="" /></div> -->
 	 
 	 <script>
 	  $("#bimg").change(function(){
@@ -97,13 +112,13 @@
 	 </script>
 	 
 	</div>
-	
 	</div>
-	
-	<div class="inputArea">
-	 <button type="submit" id="register_Btn" class="btn btn-primary">등록</button>
+	<div class="col-md-6 mb-3">
+	<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>
 	</div>
-	</form>
+	 
+	
+	</form> 
 	</div>
 
  <script>

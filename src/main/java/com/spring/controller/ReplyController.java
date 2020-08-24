@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.domain.Criteria;
+import com.spring.domain.ReplyPageVO;
 import com.spring.domain.ReplyVO;
 import com.spring.service.ReplyService;
 
@@ -28,6 +30,7 @@ public class ReplyController {
 	@Autowired
 	private ReplyService service;
 	
+	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/new")
 	public ResponseEntity<String> create(@RequestBody ReplyVO vo) {
 		log.info("´ñ±Û µî·Ï"+ vo);
@@ -62,12 +65,12 @@ public class ReplyController {
 	}
 	
 	@GetMapping("/pages/{bno}/{page}")
-	public ResponseEntity<List<ReplyVO>> getList(@PathVariable("bno") int bno, @PathVariable("page")int page){
+	public ResponseEntity<ReplyPageVO> getList(@PathVariable("bno") int bno, @PathVariable("page")int page){
 		log.info("´ñ±Û °¡Á®¿À±â" +bno + "page :"+page);
 		
 		Criteria cri = new Criteria(page, 10);
 		
-		return new ResponseEntity<List<ReplyVO>>(service.replyList(cri, bno), HttpStatus.OK);
+		return new ResponseEntity<ReplyPageVO>(service.replyList(cri, bno),HttpStatus.OK);
 	}
 	
 

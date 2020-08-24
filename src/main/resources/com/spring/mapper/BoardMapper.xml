@@ -61,7 +61,7 @@
 	</delete>
 	
 	<update id="readcount">
-	update write_board set readcount=readcount+1 where bnum = #{bnum}
+	 update write_board set readcount=readcount+1 where bnum = #{bnum}
 	</update>
 	
 	

@@ -35,8 +35,10 @@
 		]]>
 	</select>
 	
-	<select id="getCount" resultType="int">
+	<select id="getCountByBno" resultType="int">
 		select count(*) from write_reply where bno = #{bno}
 	</select>
+	
+	
 	
 </mapper>
