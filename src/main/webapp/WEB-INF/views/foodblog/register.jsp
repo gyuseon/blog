@@ -239,31 +239,6 @@
 					<input class="input100" type="email" name="email" id="email" placeholder="이메일을 입력하세요" value="${vo.email}">
 					<span class="focus-input100"></span>
 				</div>
-				
-		<!-- 	<div class="form-group row justify-content-center">
-          <label for="pass2" class="col-sm-2 col-form-label">성별 </label>
-          <div class="col-sm-6">
-            <div class="form-check form-check-inline">
-              <input
-                type="radio"
-                id="gender"
-                name="gender"
-                value="남자"
-                class="form-check-input"
-              /> 남자 
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                type="radio"
-                name="gender"
-                value="여자"
-                class="form-check-input"
-              />여자
-            </div>
-            <small id="gender" class="text-info"></small>
-          </div>
-        </div> -->
-				
 				<!-- <div class="container-login100-form-btn"> -->
 				<div class="p-r-70  p-t-10" >
 					<button type ="submit" class="login100-form-btn" >

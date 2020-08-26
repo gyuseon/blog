@@ -25,7 +25,7 @@ public interface BoardMapper {
 	public void modify(BoardVO vo);
 	
 	//레시피 삭제
-	public void delete(int bnum);
+	public int delete(int bnum);
 	
 	//
 	public List<BoardVO> selectAll(Criteria cri); 

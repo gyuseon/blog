@@ -187,11 +187,15 @@ public class BoardController {
 		//레시피 삭제
 		@PostMapping("/delete")
 		public String postdelete(@RequestParam("n") int bnum) {
-			log.info("삭제");
+			log.info("삭제 "+bnum);
 			
-			service.delete(bnum);
 			
-			return "redirect:/foodblog/boardList";
+			
+			if(service.delete(bnum)) {
+				return "redirect:/foodblog/boardList";				
+			}
+			
+			return "/foodblog/recipe";	
 		}
 		
 		// ck 에디터에서 파일 업로드

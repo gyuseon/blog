@@ -215,13 +215,13 @@
 <!--                             <p class="mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique justo id elit bibendum pharetra non vitae lectus. Mauris libero felis, dapibus a ultrices sed, commodo vitae odio. Sed auctor tellus quis arcu tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac tincidunt nunc. Cras sed mollis erat. Quisque risus lorem, mattis nec nisl a, efficitur faucibus ligula. Nulla facilisi. Integer sodales, metus nec finibus lobortis, ex justo pharetra quam, vel vehicula urna turpis ut risus. Sed dignissim erat sapien, non malesuada justo cursus nec. Nunc porta pulvinar varius.</p> -->
                         </div>
                          <div class="inputArea">
-                         	 <%-- <sec:authentication property="principal" var="auth"/> --%>
-                				<%-- <sec:authorize access="isAuthenticated()"> --%>
+                         	 <%--  <sec:authentication property="principal" var="cli" /> 
+                				 <sec:authorize access="isAuthenticated()"> --%>
                         	<c:if test="${auth.userid == view.writer}"> 
 							<button type="button" id="modify_Btn" class="btn btn-warning">수정</button>
 							<button type="button" id="delete_Btn" class="btn btn-danger">삭제</button>
 							 </c:if> 
-							 <%-- </sec:authorize> --%>
+							 <%--  </sec:authorize>  --%>
 							  			
 							 
 								<script>
@@ -621,6 +621,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- ##### Footer Area Start ##### -->
 
 
+
+
        <script>
  $(function(){
      //사용자가 페이지 번호를 누르면 생기는 스크립트
@@ -678,16 +680,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	let csrfTokenValue = "${_csrf.token}";	
 	
 	//ajax가 호출될 때는 무조건 이 부분이 따라가도록 설정
-	$(document).ajaxSend(function(e,xhr,options){
+	/* $(document).ajaxSend(function(e,xhr,options){
 		xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
-	})
+	}) */
 	
 	
 	//현재 로그인 사용자 값 가져오기
 	let replyer = null;
-	<sec:authorize access="isAuthenticated()">
-	replyer = '<sec:authentication property="principal.username"/>';
-	</sec:authorize>	
+	/* <sec:authorize access="isAuthenticated()">
+	replyer = '<sec:authentication property="principal.userid"/>';
+	</sec:authorize> */	
 	
 	$("#addReplyBtn").click(function(){
 		//input 안에 들어있는 내용 없애주기

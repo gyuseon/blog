@@ -45,10 +45,6 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
-	@Override
-	public void delete(int bnum) {
-		mapper.delete(bnum);
-	}
 
 	
 	 @Override 
@@ -67,5 +63,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int readcount(int bnum) {
 		return mapper.readcount(bnum);
+	}
+
+	@Override
+	public boolean delete(int bnum) {
+		
+		return mapper.delete(bnum) > 0 ? true:false;
 	}
 }

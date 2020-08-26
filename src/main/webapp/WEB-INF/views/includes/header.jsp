@@ -127,12 +127,6 @@
                                 <ul>
                                     <li><a href="/foodblog/index">메인</a></li>
                                     <li><a href="/foodblog/boardList">전체 레시피</a></li>
-                                    <!--<li><a href="#">Pages</a>
-                                         <ul class="dropdown">
-                                            <li><a href="/foodblog/index">메인</a></li>
-                                            <li><a href="/foodblog/contact">Contact</a></li>
-                                        </ul> 
-                                    </li>-->
                                     <li><a href="#">레시피</a>
                                         <div class="megamenu">
                                              <ul class="single-mega cn-col-4 instance-menu">

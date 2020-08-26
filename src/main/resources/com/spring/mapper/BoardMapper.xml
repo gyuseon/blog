@@ -57,7 +57,7 @@
 	
 	<!-- 상품 삭제 -->
 	<delete id="delete">
-	 delete write_board where bnum = #{bnum}
+	 delete from write_board where bnum = #{bnum}
 	</delete>
 	
 	<update id="readcount">
@@ -69,8 +69,7 @@
 	
 	<!-- 전체 게시물 가져오기 -->
  		<select id="selectAll" resultType="com.spring.domain.BoardVO">
-		<!-- select * from spring_board where bno > 0 order by bno desc
-		<![CATA[]]> == 크다 작다 꺽세 사용할때 요류가 나오는데 그걸 없애줌 -->
+		<!-- <![CATA[]]> == 크다 작다 꺽세 사용할때 요류가 나오는데 그걸 없애줌 -->
 		<![CDATA[ 
 		select * 
 		from (select /*+INDEX_DESC(write_board SYS_C0011255) */ 

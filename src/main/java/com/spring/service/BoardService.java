@@ -25,7 +25,7 @@ public interface BoardService {
 	public void modify(BoardVO vo);
 	
 	//레시피 삭제
-	public void delete(int bnum);
+	public boolean delete(int bnum);
 	
 	//
 	 public List<BoardVO> getList(Criteria cri); 

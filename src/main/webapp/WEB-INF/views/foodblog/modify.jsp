@@ -19,54 +19,56 @@
    <div id="container_box">
    		<h2>레시피 등록</h2>
    
-	<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
-	
- 	<input type="hidden" name="n" value="${view.bnum}" />
- 	
+	 <form role="form" method="post" autocomplete="off" enctype="multipart/form-data"> 
+ 
 	 <label>1차 분류</label>
-	 <select class="category1">
+	 <select class="custom-select category1">
 	  <option value="">전체</option>
 	 </select>
 	 
 	 <label>2차 분류</label>
-	 <select class="category2" name="catecode" >
+	 <select class="custom-select category2" name="catecode">
 	  <option value="">전체</option>
 	 </select>
+	
 	 
 	 <div class="inputArea">
 	 <label for="gdswriter">글쓴이</label>
-	 <input type="text" id="writer" name="writer" value="${auth.userid}" readonly/>
+	 <input type="text" class="form-control" id="writer" name="writer" value="${auth.userid}" readonly/>
 	</div>
 	 
-	<div class="inputArea">
+	  <div class="form-row">
+	<div class="col-md-6 mb-3">
 	 <label for="gdsName">음식이름</label>
-	 <input type="text" id="bname" name="bname" value="${view.bname}"/>
+	 <input type="text" class="form-control" id="bname" name="bname" />
 	</div>
 	
-	<div class="inputArea">
-	 <label for="gdsName">조리시간</label>
-	 <input type="text" id="cooktime" name="cooktime" value="${view.cooktime}"/>
-	</div>
-	<div class="inputArea">
-	 <label for="gdsName">몇인분</label>
-	 <input type="text" id="serving" name="serving" value="${view.serving}"/>
-	</div>
-	<div class="inputArea">
-	 <label for="gdsName">조리온도</label>
-	 <input type="text" id="temperature" name="temperature" value="${view.temperature}"/>
-	</div>
-	<div class="inputArea">
-	 <label for="gdsName">난이도</label>
-	 <input type="text" id="difficult" name="difficult" value="${view.difficult}"/>
-	</div>
-	<div class="inputArea">
-	 <label for="gdstitle">난이도</label>
-	 <input type="text" id="title" name="title" value="${view.title}"/>
+	<div class="col-md-6 mb-3">
+	 <label for="gdscooktime">조리시간</label>
+	 <input type="text" class="form-control" id="cooktime" name="cooktime" />
 	</div>
 	
-	<div class="inputArea">
+	
+	<div class="col-md-6 mb-3">
+	 <label for="gdsserving">몇인분</label>
+	 <input type="text" class="form-control" id="serving" name="serving" />
+	</div>
+	<div class="col-md-6 mb-3">
+	 <label for="gdstemperature">조리온도</label>
+	 <input type="text" class="form-control" id="temperature" name="temperature" />
+	</div>
+	<div class="col-md-6 mb-3">
+	 <label for="gdsdifficult">난이도</label>
+	 <input type="text" class="form-control" id="difficult" name="difficult" />
+	</div>
+	<div class="col-md-6 mb-3">
+	 <label for="gdstitle">제목</label>
+	 <input type="text" class="form-control" id="title" name="title" />
+	</div>
+	</div>
+	<div class="col-md-6 mb-3">
 	 <label for="gdsDes">음식소개</label>
-	 <textarea rows="5" cols="50" id="bdes" name="bdes">${view.bdes}</textarea>
+	 <textarea rows="5" cols="50" id="bdes" name="bdes"></textarea>
 	 
 	 <script>
 		 var ckeditor_config = {

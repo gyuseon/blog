@@ -29,12 +29,7 @@
 	 <select class="custom-select category2" name="catecode">
 	  <option value="">전체</option>
 	 </select>
-	 
-	 
 	
-
-
-	 
 	 
 	 <div class="inputArea">
 	 <label for="gdswriter">글쓴이</label>
@@ -171,10 +166,6 @@
 	 
 	 var cate2Select = $("select.category2");
 	
-	 /* for(var i = 0; i < cate2Arr.length; i++) {
-	   cate2Select.append("<option value='" + cate2Arr[i].cateCode + "'>"
-	        + cate2Arr[i].cateName + "</option>");
-	 }  */
 	 
 	 cate2Select.children().remove();
 
