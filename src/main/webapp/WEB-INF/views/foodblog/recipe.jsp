@@ -215,14 +215,11 @@
 <!--                             <p class="mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique justo id elit bibendum pharetra non vitae lectus. Mauris libero felis, dapibus a ultrices sed, commodo vitae odio. Sed auctor tellus quis arcu tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac tincidunt nunc. Cras sed mollis erat. Quisque risus lorem, mattis nec nisl a, efficitur faucibus ligula. Nulla facilisi. Integer sodales, metus nec finibus lobortis, ex justo pharetra quam, vel vehicula urna turpis ut risus. Sed dignissim erat sapien, non malesuada justo cursus nec. Nunc porta pulvinar varius.</p> -->
                         </div>
                          <div class="inputArea">
-                         	 <%--  <sec:authentication property="principal" var="cli" /> 
-                				 <sec:authorize access="isAuthenticated()"> --%>
                         	<c:if test="${auth.userid == view.writer}"> 
 							<button type="button" id="modify_Btn" class="btn btn-warning">수정</button>
 							<button type="button" id="delete_Btn" class="btn btn-danger">삭제</button>
 							 </c:if> 
-							 <%--  </sec:authorize>  --%>
-							  			
+			
 							 
 								<script>
 								 var formObj = $("form[role='form']");

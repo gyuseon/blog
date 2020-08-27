@@ -276,7 +276,12 @@
         </div>
     </div>
     <!-- ##### Big Posts Area End ##### -->
-
+	<%-- 페이지번호를 누르면 동작하는 폼 --%>
+    <form action="/foodblog/boardList" id="actionForm">
+		<input type="hidden" name="pageNum" value="${PageVO.cri.pageNum}"/>
+		<input type="hidden" name="amount" value="${PageVO.cri.amount}"/>
+		<input type="hidden" name="cateCode" value="${PageVO.cri.cateCode}"/>
+	</form>
     <!-- ##### Posts Area End ##### -->
     <div class="bueno-post-area mb-70">
         <div class="container">
@@ -437,12 +442,7 @@
         </div>
     </div>
     <!-- ##### Posts Area End ##### -->
-	<%-- 페이지번호를 누르면 동작하는 폼 --%>
-    <form action="/foodblog/boardList" id="actionForm">
-		<input type="hidden" name="pageNum" value="${PageVO.cri.pageNum}"/>
-		<input type="hidden" name="amount" value="${PageVO.cri.amount}"/>
-		<input type="hidden" name="cateCode" value="${PageVO.cri.cateCode}"/>
-	</form>
+	
     <!-- ##### Instagram Area Start ##### -->
     <div class="instagram-feed-area d-flex flex-wrap">
         <!-- Single Instagram -->

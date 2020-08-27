@@ -165,7 +165,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="single-post.html">Blog</a></li>
+                                    
                                     <li><a href="/foodblog/contact">Contact</a></li>
                                 </ul>
 

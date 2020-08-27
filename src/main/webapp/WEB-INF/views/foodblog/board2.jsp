@@ -116,6 +116,13 @@
 	</form> 
 	</div>
 
+	<%-- 페이지번호를 누르면 동작하는 폼 --%>
+    <form action="/foodblog/boardList" id="actionForm">
+		<input type="hidden" name="pageNum" value="${PageVO.cri.pageNum}"/>
+		<input type="hidden" name="amount" value="${PageVO.cri.amount}"/>
+		<input type="hidden" name="cateCode" value="${PageVO.cri.cateCode}"/>
+	</form>
+
  <script>
  
 	// 컨트롤러에서 데이터 받기
@@ -186,6 +193,33 @@
 	});
     
     </script> 
+    
+    <script>
+ $(function(){
+     //사용자가 페이지 번호를 누르면 생기는 스크립트
+	 	// 전송해야 할 폼 가져온 후
+	 	let actionForm = $("#actionForm");
+	 //사용자가 페이지 번호를 누르면 동작하는 스크립트
+	 $(".page-item a").click(function(e){
+	 // a 태그의 동작 막기
+		e.preventDefault();	 
+	 // (전송해야 할 폼 가져온 후) pageNum 의 값을 변경한 후
+	 	actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+	 // 폼 전송하기
+	 	actionForm.submit();
+	 })
+	 
+	 $(".instance-menu").on("click","li a",function(e){
+		 e.preventDefault();
+		 console.log($(this).attr("href"));
+		 actionForm.find("input[name='cateCode']").val($(this).attr("href"));
+		 actionForm.find("input[name='pageNum']").val("1");
+		 actionForm.find("input[name='amount']").val("10");
+		 actionForm.submit();
+	 })
+	 
+ })
+    </script>
 
 </div>
 
